@@ -1,0 +1,20 @@
+.img_fondo {
+    background-image: url(../../../public/peakpx.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 30em;
+
+}
+
+.title_banner {
+    color: azure;
+    text-align: center;
+    padding-top: 2em;
+}
+
+.text_banner {
+    color: azure;
+    text-align: center;
+    padding-top: 1em;
+}

@@ -4,9 +4,9 @@ import CartWidget from '../CartWidget/CartWidget';
 const NavBar = () => {
     return (
         <header data-bs-theme="dark">
-            <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <nav className="navbar navbar-expand-md navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <img className="imglogo" src="../../../public/logo3.png" alt="logo" />
+                    <img className="imglogo" src="../../../public/logo.png" alt="logo" />
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>

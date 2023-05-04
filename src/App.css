@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+    margin: 0px;
+    background-image: url(../imagenes/4.jpg);
+  }

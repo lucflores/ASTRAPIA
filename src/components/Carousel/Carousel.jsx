@@ -2,55 +2,45 @@ import './Carousel.css';
 
 const Carousel = () => {
   return (
-    <div>
-        <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleDark" className="carousel carousel-dark slide">
   <div className="carousel-indicators">
-    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to={0} className="active" aria-current="true" aria-label="Slide 1" />
-    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to={1} aria-label="Slide 2" />
-    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to={2} aria-label="Slide 3" />
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to={0} className="active" aria-current="true" aria-label="Slide 1" />
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to={1} aria-label="Slide 2" />
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to={2} aria-label="Slide 3" />
   </div>
   <div className="carousel-inner">
-    <div className="carousel-item active">
-      <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)" /></svg>
-      <div className="container">
-        <div className="carousel-caption text-start">
-          <h1>Example headline.</h1>
-          <p>Some representative placeholder content for the first slide of the carousel.</p>
-          <p><a className="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-        </div>
+    <div className="carousel-item active" data-bs-interval={10000}>
+      <img src="https://www.lolahome.es/media/catalog/category/N3_DESTACADO_MUEBLESJARDIN_SILLASSILLONES_cuDaKQA82O7LMSCT.jpg" className="d-block w-100" alt="..." />
+      <div className="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div className="carousel-item" data-bs-interval={2000}>
+      <img src="https://www.casa.cat/wp-content/uploads/cocinas-de-lujo.jpg" className="d-block w-100" alt="..." />
+      <div className="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
     <div className="carousel-item">
-      <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)" /></svg>
-      <div className="container">
-        <div className="carousel-caption">
-          <h1>Another example headline.</h1>
-          <p>Some representative placeholder content for the second slide of the carousel.</p>
-          <p><a className="btn btn-lg btn-primary" href="#">Learn more</a></p>
-        </div>
-      </div>
-    </div>
-    <div className="carousel-item">
-      <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)" /></svg>
-      <div className="container">
-        <div className="carousel-caption text-end">
-          <h1>One more for good measure.</h1>
-          <p>Some representative placeholder content for the third slide of this carousel.</p>
-          <p><a className="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-        </div>
+      <img src="https://www.nelson-mobilier.com/images/1679496158-banner-nelson-2-copia-slide.jpg" className="d-block w-100" alt="..." />
+      <div className="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
       </div>
     </div>
   </div>
-  <button className="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
     <span className="carousel-control-prev-icon" aria-hidden="true" />
     <span className="visually-hidden">Previous</span>
   </button>
-  <button className="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
     <span className="carousel-control-next-icon" aria-hidden="true" />
     <span className="visually-hidden">Next</span>
   </button>
 </div>
-    </div>
+
   )
 }
 
