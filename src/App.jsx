@@ -19,7 +19,6 @@ function App() {
       <ItemCount />
       <Vista />
       <Parallax />
-      <Card />
       <Form />
     </>
   )

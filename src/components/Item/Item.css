@@ -1,0 +1,22 @@
+.card-contenido {
+    border-radius: 10px;
+    width: 15rem;
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-img {
+    border-radius: 50%;
+    object-fit: contain;
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+}
+.card-nombre {
+    color: black;
+}
+.card-descripcion {
+    color: black;
+}

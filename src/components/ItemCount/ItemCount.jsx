@@ -1,8 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ItemCount = () => {
     const [contador, setContador] = useState(1);
+    const [color, setColor] = useState("black")
     let maximoStock = 10;
+
+    useEffect ( () => {
+        if(contador > 5){
+            setColor("red")
+        } else {
+            setColor("black")
+        }
+    }, [contador])
 
     const incrementar = () =>{
         if (contador < maximoStock)
@@ -20,11 +29,11 @@ const ItemCount = () => {
     return (
         <div>
             <button type="button" className="btn btn-primary" onClick={ incrementar }> + </button>
-            <p className="text-dark"> {contador} </p>
-            <button onClick={ decrementar }> - </button>
+            <strong> {contador} </strong>
+            <button type="button" className="btn btn-primary" onClick={ decrementar }> - </button>
             <br /> <br />
 
-            <button onClick={addCarrito}>Agregar</button>
+            <button type="button" className="btn btn-primary" onClick={addCarrito} style={{color:color}}>Agregar</button>
         </div>
     )
 }
