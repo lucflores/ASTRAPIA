@@ -5,7 +5,7 @@ const productos = [
       "nombre": "Desayunador",
       "descripcion": "Madera laqueada, reforzada con hierros color negro",
       "precio": 19000,
-      "cantidad": 1,
+      "cantidad": 10,
       "imagen": "../img1.jpg"
     },
     {
@@ -14,7 +14,7 @@ const productos = [
       "nombre": "Mesa ratona",
       "descripcion": "Madera maceza laqueada, de color natural",
       "precio": 15500,
-      "cantidad": 1,
+      "stock": 10,
       "imagen": "../img2.jpg"
     },
     {
@@ -23,7 +23,7 @@ const productos = [
       "nombre": "Mesa de Luz",
       "descripcion": "Color blanco con detalles en color madera",
       "precio": 15000,
-      "cantidad": 1,
+      "stock": 10,
       "imagen": "../img3.jpg"
     },
     {
@@ -32,7 +32,7 @@ const productos = [
       "nombre": "Mesa de trabajo",
       "descripcion": "Ideal para trabajar desde casa, reforzada con terminados en negro",
       "precio": 35800,
-      "cantidad": 1,
+      "stock": 3,
       "imagen": "../img4.jpg"
     },
     {
@@ -41,7 +41,7 @@ const productos = [
       "nombre": "Juego de comedor",
       "descripcion": "Con madera maciza, laqueada, incluye 6 sillas",
       "precio": 82000,
-      "cantidad": 1,
+      "stock": 10,
       "imagen": "../img5.jpg"
     },
     {
@@ -50,7 +50,7 @@ const productos = [
       "nombre": "Silla",
       "descripcion": "Silla para redecorar esos espacios de la casa, de madera",
       "precio": 12800,
-      "cantidad": 1,
+      "stock": 5,
       "imagen": "../img6.jpg"
     }
 ]
