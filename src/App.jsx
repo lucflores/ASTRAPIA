@@ -4,11 +4,12 @@ import NavBar from './components/NavBar/NavBar';
 import Carousel from './components/Carousel/Carousel';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Parallax from './components/Parallax/Parallax';
-import Form from './components/Form/Form';
+
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CarritoProvider } from './context/CarritoContext';
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
 
@@ -24,9 +25,9 @@ function App() {
             <Route path='/item/:idItem' element={<ItemDetailContainer />} />
             <Route path='*' element={<h2> Sitio en construcción </h2>} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/checkout' element={<Checkout />} />
           </Routes>
           <Parallax />
-          <Form />
           </CarritoProvider>
       </BrowserRouter>
     </>

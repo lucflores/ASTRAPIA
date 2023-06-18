@@ -5,7 +5,6 @@ export const CarritoContext = createContext({
     carrito: [],
     Total: 0,
     cantidadTotal: 0,
-    //agregarProducto: () =>{} 
 });
 
 
