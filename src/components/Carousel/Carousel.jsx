@@ -13,21 +13,21 @@ const Carousel = () => {
       <img src="https://www.lolahome.es/media/catalog/category/N3_DESTACADO_MUEBLESJARDIN_SILLASSILLONES_cuDaKQA82O7LMSCT.jpg" className="d-block w-100" alt="..." />
       <div className="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+        <p>Bienvenido a nuestra tienda, donde el diseño se encuentra con la funcionalidad y la belleza se encuentra con la calidad. Esperamos que encuentres el mueble perfecto que refleje tu estilo y personalidad.</p>
       </div>
     </div>
     <div className="carousel-item" data-bs-interval={2000}>
       <img src="https://www.casa.cat/wp-content/uploads/cocinas-de-lujo.jpg" className="d-block w-100" alt="..." />
       <div className="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+        <p>Bienvenido a nuestra tienda, donde el diseño se encuentra con la funcionalidad y la belleza se encuentra con la calidad. Esperamos que encuentres el mueble perfecto que refleje tu estilo y personalidad.</p>
       </div>
     </div>
     <div className="carousel-item">
       <img src="https://www.nelson-mobilier.com/images/1679496158-banner-nelson-2-copia-slide.jpg" className="d-block w-100" alt="..." />
       <div className="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+        <p>Bienvenido a nuestra tienda, donde el diseño se encuentra con la funcionalidad y la belleza se encuentra con la calidad. Esperamos que encuentres el mueble perfecto que refleje tu estilo y personalidad.</p>
       </div>
     </div>
   </div>

@@ -4,9 +4,8 @@ const Parallax = () => {
   return (
     <div className='img_fondo'>
         <h1 className='title_banner'>Todos los productos</h1>
-        <p className='text_banner'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem modi quasi totam est 
-            minus sapiente fuga similique, delectus voluptatem accusantium accusamus error veniam, atque, 
-            minima quod esse dolore laboriosam cum!</p>
+        <p className='text_banner'>Nos enorgullece ofrecer a nuestros clientes una amplia gama de muebles de diseño, que incluye sofás, sillas, mesas, estanterías y más. 
+        Cada producto está diseñado para realzar cualquier espacio interior con su estilo contemporáneo y atemporal.</p>
     </div>
   )
 }

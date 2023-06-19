@@ -34,7 +34,7 @@ const ItemDetail = ({ id, nombre, precio, imagen, descripcion, stock }) => {
               <h5 className="card-title">{nombre}</h5>
               <p className="text-body-secondary">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               <div className="d-flex justify-content-between align-items-center">
-                <small className="text-body-secondary"><small className="text-body-secondary">${precio}</small></small>
+                <small className="text-body-secondary">${precio}</small>
                 {
                   addCantidad > 0 ? (<Link to="/cart"> Terminar Compra </Link>) : (<ItemCount inicial={1} stock={stock} funcionAgregar={manejadorCantidad} />)
                 }

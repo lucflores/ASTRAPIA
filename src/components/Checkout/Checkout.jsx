@@ -1,12 +1,12 @@
 import { useState, useContext } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
 import { db } from "../../services/config";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
 import Swal from "sweetalert2";
 
 
 const Checkout = () => {
-    const { carrito, vaciarCarrito } = useContext(CarritoContext);
+    const { carrito, vaciarCarrito, total } = useContext(CarritoContext);
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
     const [telefono, setTelefono] = useState("");
@@ -37,36 +37,56 @@ const Checkout = () => {
             nombre,
             apellido,
             telefono,
-            email
+            email,
+            fecha: new Date(),
         };
 
+        Promise.all(
+            orden.items.map(async (productoOrden) => {
+                //Por cada producto en la colección productos obtengo una referencia, y a partir de esa referencia obtengo el doc. 
+                const productoRef = doc(db, "productos", productoOrden.id);
+                const productoDoc = await getDoc(productoRef);
+                const stockActual = productoDoc.data().stock;
+                //Data es un método que me permite acceder a la información del Documento. 
+                await updateDoc(productoRef, {
+                    stock: stockActual - productoOrden.cantidad,
+                });
+                //Modifico el stock para luego subir la información actualizada. 
+            })
+        )
 
-        addDoc(collection(db, "ordenes"), orden)
-            .then(docRef => {
+        .then(() => {
+            addDoc(collection(db, "ordenes"), orden)
+            .then((docRef) => {
                 setOrderId(docRef.id);
                 vaciarCarrito();
+
+                Swal.fire({
+                    title: "¡Gracias por tu compra!",
+                    text: `Tu número de orden es ${docRef.id}`,
+                    icon: "success",
+                    confirmButtonText: "Terminar",
+                });
             })
             .catch(error => {
                 console.error("error al crear la orden.", error)
                 setError("Se produjo error al cargar la orden");
             })
-            Swal.fire({
-                title: "¡Gracias por tu compra!",
-                text: `Tu número de orden es ${orderId}`,
-                icon: "success",
-                confirmButtonText: "Terminar",
-            })
+        })
 
+        .catch((error) => {
+            console.error("Error al actualizar el stock", error)
+            setError("Se produjo un error al actualizar el stock de los productos, vuelva más tarde")
+        })
+
+        
         setNombre("");
         setApellido("");
         setTelefono("");
         setEmail("");
         setEmailConfirmacion("");
-
-
-            
-        
     }
+
     return (
         <div className="container">
             <div className="py-5 text-center">
@@ -84,14 +104,14 @@ const Checkout = () => {
                             <li className="list-group-item d-flex justify-content-between lh-condensed" key={producto.item.id}>
                                 <div>
                                     <p className="my-0">{producto.item.nombre} x {producto.cantidad}</p>
-                                    <small className="text-muted">Brief description</small>
+                                    <small className="text-muted">Descripción</small>
                                 </div>
                                 <span className="text-muted"> c/u ${producto.item.precio}</span>
                             </li>
                         ))}
                         <li className="list-group-item d-flex justify-content-between">
                             <span>Total (USD)</span>
-                            <strong>$Total</strong>
+                            <strong>Total compra: $ {total}</strong>
                         </li>
                     </ul>
                     <form className="card p-2">
@@ -132,7 +152,7 @@ const Checkout = () => {
                         {error && <p style={{ color: "red" }}>{error}</p>}
                         <button className="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
                     </form>
-                    
+
                 </div>
             </div>
         </div>
