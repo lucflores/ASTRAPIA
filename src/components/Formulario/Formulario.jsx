@@ -42,7 +42,7 @@ const Formulario = () => {
   return (
     <div className="container">
       <div className="py-5 text-center">
-        <h2>Sugerencias</h2>
+        <h2>Dejanos tu sugerencia...</h2>
       </div>
         <div className="col-md-12 order-md-1">
           <form ref={form} onSubmit={sendEmail}>
