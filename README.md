@@ -2,7 +2,7 @@
 
 Este es un proyecto de e-commerce básico, es una tienda de muebles en línea que ofrece una experiencia de compra sencilla. Los usuarios pueden explorar y comprar productos, ver el resumen de su carrito y generar órdenes de compra.
 
---------------------------------------------------tecnologia utilizada----------------------------------------------------
+--------------------------------------------------tecnología utilizada----------------------------------------------------
 
 -React
 
