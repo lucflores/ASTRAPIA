@@ -37,7 +37,7 @@ const ItemDetail = ({ id, nombre, precio, imagen, descripcion, stock }) => {
             <div className="d-flex flex-column">
               {addCantidad > 0 ? (
                 <>
-                  <Link to="/" className="mb-2 text-secondary" style={{ fontSize: "small"}}>Seguir comprando</Link>
+                  <Link to="/categoria/2" className="mb-2 text-secondary" style={{ fontSize: "small"}}>Seguir comprando</Link>
                   <Link to="/cart" className="mb-2 text-secondary" style={{ fontSize: "small"}}>Finalizar</Link>
                 </>
               ) : (

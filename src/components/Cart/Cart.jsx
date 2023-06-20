@@ -11,7 +11,7 @@ const Cart = () => {
             <div className="text-center">
                 <div className="d-flex flex-column">
                     <h2>No hay productos en el carrito</h2>
-                    <Link to='/' className="mb-2 text-secondary" style={{ fontSize: "small" }}>Ver productos</Link>
+                    <Link to='/categoria/2' className="mb-2 text-secondary" style={{ fontSize: "small" }}>Ver productos</Link>
                 </div>
             </div>
 
@@ -27,7 +27,7 @@ const Cart = () => {
                     <h4 className="text-body-secondary">Total a pagar: ${total}</h4>
                     <button className="btn btn-outline-secondary btn-sm mb-2 mx-2" onClick={() => vaciarCarrito()}>Vaciar carrito</button>
                     <Link to='/checkout' className="btn btn-outline-secondary btn-sm custom-button mb-2 mx-2">Finalizar compra</Link>
-                    <Link to='/' className="btn btn-outline-secondary btn-sm custom-button mb-2 mx-2">Seguir comprando</Link>
+                    <Link to='/categoria/2' className="btn btn-outline-secondary btn-sm custom-button mb-2 mx-2">Seguir comprando</Link>
                 </div>
             </div>
         </div>

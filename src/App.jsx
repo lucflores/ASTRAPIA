@@ -19,7 +19,6 @@ function Principal() {
       <Carousel />
       <Parallax />
       <Formulario />
-      <Footer />
     </>
   );
 }
@@ -38,6 +37,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
           </Routes>
+          <Footer />
         </CarritoProvider>
       </BrowserRouter>
     </>

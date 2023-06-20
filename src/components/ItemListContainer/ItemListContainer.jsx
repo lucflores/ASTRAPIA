@@ -6,7 +6,6 @@ import { db } from "../../services/config";
 
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
-
   const {idCategoria} = useParams();
 
   useEffect( () => {

@@ -18,7 +18,7 @@ const CartWidget = () => {
 										13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
 					</svg>
 					{
-						cantidadTotal > 0 && <spam>{cantidadTotal}</spam>
+						cantidadTotal > 0 && <span>{cantidadTotal}</span>
 					}
 				</button>
 			</Link>
