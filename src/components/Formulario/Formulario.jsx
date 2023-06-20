@@ -30,7 +30,7 @@ const Form = () => {
   return (
     <div className="container">
       <div className="py-5 text-center">
-        <h2>Formulario</h2>
+        <h2>Formulario de contacto</h2>
       </div>
         <div className="col-md-12 order-md-1">
           <form onSubmit={ manejadorFormulario }>
@@ -60,11 +60,6 @@ const Form = () => {
               {error && <p style={{color:"red"}}>{error}</p>}
             <button className="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
           </form>
-          {
-            orderId && (
-              <strong>¡Gracias por tu compra! Tu numero de orden es {orderId}</strong>
-            )
-          }
         </div>
       </div>
     
