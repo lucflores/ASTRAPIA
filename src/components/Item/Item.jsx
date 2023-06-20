@@ -9,12 +9,15 @@ const Item = ({ id, nombre, precio, imagen, stock, descripcion }) => {
             </div>
             <div className="card-body">
                 <h2 className="card-nombre">{nombre}</h2>
-                <p className="card-descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis laudantium laboriosam repellendus tenetur aliquid necessitatibus fugit. Expedita sit tempora laborum at assumenda possimus quam eaque. Possimus laborum recusandae exercitationem excepturi.</p>
+                <p className="card-descripcion"> {descripcion} </p>
                 <small className="text-body-secondary text-muted">Stock actual {stock}</small>
                 <p className="card-descripcion">Precio: ${precio}</p>
-                <Link to={`/item/${id}`}>ver detalle</Link>
+                <div className="d-flex justify-content-end">
+                    <Link to={`/item/${id}`} className="mb-2 text-secondary" style={{ fontSize: "small" }}>ver detalle</Link>
+                </div>
             </div>
         </div>
+
 
     )
 }

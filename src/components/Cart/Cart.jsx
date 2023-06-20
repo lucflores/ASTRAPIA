@@ -4,31 +4,35 @@ import { Link } from "react-router-dom";
 import CartItem from "../CartItem/CartItem";
 
 const Cart = () => {
-    const { carrito, vaciarCarrito, total, cantidadTotal, imagen, nombre } = useContext(CarritoContext);
+    const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext);
 
     if (cantidadTotal === 0) {
         return (
-            <>
-                <h2> No hay productos en el carrito </h2>
-                <Link to='/'>Ver productos</Link>
-            </>
+            <div className="text-center">
+                <div className="d-flex flex-column">
+                    <h2>No hay productos en el carrito</h2>
+                    <Link to='/' className="mb-2 text-secondary" style={{ fontSize: "small" }}>Ver productos</Link>
+                </div>
+            </div>
+
+
         )
     }
     return (
-        <div className="container marketing">
+        <div className="container marketing text-center">
             <div className="row">
-                <div className="col-lg-4">
+                <div className="position-relative col-lg-7 mx-auto">
                     {carrito.map(producto => <CartItem key={producto.id} {...producto} />)}
-                    <div className="card-img-top" style={{ width: "100%", height: "400px" }}>
-                        <img src={imagen} alt={nombre} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
-                    </div>
-                    <h3>Total: ${total}</h3>
-                    <h3>Cantidad total: {cantidadTotal}</h3>
-                    <button onClick={() => vaciarCarrito()}> Vaciar carrito </button>
-                    <Link to='/checkout'> Finalizar compra </Link>
+                    <small className="text-body-secondary">Cantidad total de productos: {cantidadTotal}</small>
+                    <h4 className="text-body-secondary">Total a pagar: ${total}</h4>
+                    <button className="btn btn-outline-secondary btn-sm mb-2 mx-2" onClick={() => vaciarCarrito()}>Vaciar carrito</button>
+                    <Link to='/checkout' className="btn btn-outline-secondary btn-sm custom-button mb-2 mx-2">Finalizar compra</Link>
+                    <Link to='/' className="btn btn-outline-secondary btn-sm custom-button mb-2 mx-2">Seguir comprando</Link>
                 </div>
             </div>
         </div>
+
+
 
     )
 }

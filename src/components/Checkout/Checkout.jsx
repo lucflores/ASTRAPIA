@@ -30,8 +30,7 @@ const Checkout = () => {
             items: carrito.map(producto => ({
                 id: producto.item.id,
                 nombre: producto.item.nombre,
-                cantidad: producto.cantidad
-
+                cantidad: producto.cantidad,
             })),
             total: carrito.reduce((total, producto) => total + producto.item.precio * producto.cantidad, 0),
             nombre,
@@ -55,31 +54,31 @@ const Checkout = () => {
             })
         )
 
-        .then(() => {
-            addDoc(collection(db, "ordenes"), orden)
-            .then((docRef) => {
-                setOrderId(docRef.id);
-                vaciarCarrito();
+            .then(() => {
+                addDoc(collection(db, "ordenes"), orden)
+                    .then((docRef) => {
+                        setOrderId(docRef.id);
+                        vaciarCarrito();
 
-                Swal.fire({
-                    title: "¡Gracias por tu compra!",
-                    text: `Tu número de orden es ${docRef.id}`,
-                    icon: "success",
-                    confirmButtonText: "Terminar",
-                });
+                        Swal.fire({
+                            title: "¡Gracias por tu compra!",
+                            text: `Tu número de orden es: ${docRef.id}`,
+                            icon: "success",
+                            confirmButtonText: "Terminar",
+                        });
+                    })
+                    .catch(error => {
+                        console.error("error al crear la orden.", error)
+                        setError("Se produjo error al cargar la orden");
+                    })
             })
-            .catch(error => {
-                console.error("error al crear la orden.", error)
-                setError("Se produjo error al cargar la orden");
+
+            .catch((error) => {
+                console.error("Error al actualizar el stock", error)
+                setError("Se produjo un error al actualizar el stock de los productos, vuelva más tarde")
             })
-        })
 
-        .catch((error) => {
-            console.error("Error al actualizar el stock", error)
-            setError("Se produjo un error al actualizar el stock de los productos, vuelva más tarde")
-        })
 
-        
         setNombre("");
         setApellido("");
         setTelefono("");
@@ -90,7 +89,7 @@ const Checkout = () => {
     return (
         <div className="container">
             <div className="py-5 text-center">
-                <h2>Checkout form</h2>
+                <h2>Finalizar compra</h2>
             </div>
             <div className="row">
                 <div className="col-md-4 order-md-2 mb-4">
@@ -103,20 +102,20 @@ const Checkout = () => {
                         {carrito.map(producto => (
                             <li className="list-group-item d-flex justify-content-between lh-condensed" key={producto.item.id}>
                                 <div>
-                                    <p className="my-0">{producto.item.nombre} x {producto.cantidad}</p>
+                                    <p className="my-0 text-body-secondary">{producto.item.nombre} x {producto.cantidad}</p>
                                     <small className="text-muted">Descripción</small>
                                 </div>
                                 <span className="text-muted"> c/u ${producto.item.precio}</span>
                             </li>
                         ))}
                         <li className="list-group-item d-flex justify-content-between">
-                            <span>Total (USD)</span>
-                            <strong>Total compra: $ {total}</strong>
+                            <span>Total compra:</span>
+                            <strong>$ {total}</strong>
                         </li>
                     </ul>
                     <form className="card p-2">
                         <div className="input-group">
-                            <input type="text" className="form-control" placeholder="Promo code" />
+                            <input type="text" className="form-control" placeholder="Código de promoción" />
                             <div className="input-group-append">
                                 <button type="submit" className="btn btn-secondary">Validar</button>
                             </div>
@@ -124,7 +123,7 @@ const Checkout = () => {
                     </form>
                 </div>
                 <div className="col-md-8 order-md-1">
-                    <h4 className="mb-3">Formulario</h4>
+                    <h4 className="mb-3">Completa el formilario para finalizar la compra</h4>
                     <form onSubmit={manejadorFormulario}>
                         <div className="row">
                             <div className="col-md-6 mb-3">
@@ -148,11 +147,12 @@ const Checkout = () => {
                             <label htmlFor="emailConfirmacion">Confirmar Correo Electrónico</label>
                             <input type="email" className="form-control" id="emailConfirmacion" placeholder="correo@example.com" onChange={(e) => setEmailConfirmacion(e.target.value)} value={emailConfirmacion} />
                         </div>
-                        <hr className="mb-4" />
                         {error && <p style={{ color: "red" }}>{error}</p>}
-                        <button className="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
+                        <div className="d-flex justify-content-center">
+                            <button className="btn btn-outline-secondary  btn-block" type="submit">Enviar</button>
+                        </div>
+                        <hr className="mb-4" />
                     </form>
-
                 </div>
             </div>
         </div>
