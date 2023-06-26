@@ -8,7 +8,7 @@ const NavBar = () => {
             <nav className="navbar navbar-expand-md navbar-dark bg-dark">
                 <div className="container-fluid">
                     <Link to="/">
-                    <img className="imglogo" src="../../../public/logo.png" alt="logo" />
+                    <img className="imglogo" src="../../public/logo.png" alt="logo" />
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />

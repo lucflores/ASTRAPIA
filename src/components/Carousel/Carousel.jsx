@@ -10,7 +10,7 @@ const Carousel = () => {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active" data-bs-interval={10000}>
-          <img src="https://www.lolahome.es/media/catalog/category/N3_DESTACADO_MUEBLESJARDIN_SILLASSILLONES_cuDaKQA82O7LMSCT.jpg" className="d-block w-100" alt="..." />
+          <img src="https://ooiio.com/wp-content/uploads/2021/10/Reforma-Integral-Apartamento-OOIIO-Arquitectura-1.jpg" className="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block">
             <p className="text-body-secondary">Bienvenido a nuestra tienda, donde el diseño se encuentra con la funcionalidad y la belleza se encuentra con la calidad. Esperamos que encuentres el mueble perfecto que refleje tu estilo y personalidad.</p>
           </div>
@@ -37,6 +37,7 @@ const Carousel = () => {
         <span className="visually-hidden">Siguiente</span>
       </button>
     </div>
+    <h3 className='text-center text-body-secondary mx-15'>Bienvenidos</h3>
     <p className="mx-4 my-4 px-4 py-2 text-center text-body-secondary text-muted">En nuestra tienda de muebles de madera, llevamos más de dos décadas creando piezas únicas y duraderas que transforman los espacios en hogares acogedores y llenos de estilo. 
       Nuestra historia comenzó con la pasión por la belleza natural de la madera y el deseo de ofrecer muebles de alta calidad que perduren en el tiempo.
       Desde nuestros modestos inicios en un pequeño taller, nos hemos convertido en un referente en el mundo del diseño y la fabricación de muebles de madera. 
